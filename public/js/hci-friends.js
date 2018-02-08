@@ -5,11 +5,18 @@ $(document).ready(function() {
 	initializePage();
 })
 
+function nameClick(e){
+	e.preventDefault();
+	var text = $(this);
+	text.text(anagrammedName(text.text()));
+}
+
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$("a.anagram").click(nameClick);
 }
 
 function anagrammedName(name) {
